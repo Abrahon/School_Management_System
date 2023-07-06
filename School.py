@@ -7,6 +7,11 @@ class School:
     def add_classroom(self, classroom):
         self.classroom[classroom.name] = classroom
         
+    def add_teacher(self, subject,teacher):
+        self.teachers[subject] = teacher
+            
+       
+        
     def student_admission(self, student, classroom_name):
         if classroom_name in self.classrooms:
             # TODO: set student id, (roll num) at the time of adding the student 
@@ -23,6 +28,8 @@ class ClassRoom:
         
     def add_student(self, student):
        serial_id = f'{self.name}-{len(self.students) + 1}'
+       student.id = serial_id
+       student.classroom = self.name
        self.students.append(student)
        
     def __str__(self) -> str:
@@ -32,6 +39,7 @@ class ClassRoom:
     
     def get_top_students(self):
         pass
-       
+    
+      
     
         
